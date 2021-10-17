@@ -22,7 +22,18 @@ class EditProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nameAttributedPlaceholder = NSAttributedString(string: "Name",
+                                                    attributes: [NSAttributedString.Key.foregroundColor: appColors.purpleColor])
         
+        let emailAttributedPlaceholder = NSAttributedString(string: "Email",
+                                                     attributes: [NSAttributedString.Key.foregroundColor: appColors.purpleColor])
+
+        let phoneAttributedPlaceholder = NSAttributedString(string: "Phone",
+                                                     attributes: [NSAttributedString.Key.foregroundColor: appColors.purpleColor])
+        
+        txtFullName.attributedPlaceholder = nameAttributedPlaceholder
+        txtEmail.attributedPlaceholder = emailAttributedPlaceholder
+        txtPhone.attributedPlaceholder = phoneAttributedPlaceholder
     }
     
     override func viewWillAppear(_ animated: Bool) {

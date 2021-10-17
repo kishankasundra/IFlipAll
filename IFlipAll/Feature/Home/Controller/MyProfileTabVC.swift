@@ -10,13 +10,15 @@ import UIKit
 
 class MyProfileTabVC: UIViewController {
     
-        let options : [String] = ["Sell Products","Buy Products","Edit Profile","Change Password","Messages","About IFlipAll","Term of Services","Privacy Policy","Contact us","Safety Tips","FAQ","Settings","Logout"]
-        
-        let optionImgs : [String] = ["ic_sell_products","ic_buy_products","ic_edit_profile","ic_change_password","ic_messages","ic_about_iflipall","ic_term_of_services","ic_privacy_policy","ic_contact_us","ic_safety_tips","ic_faq","ic_setting","ic_logout"]
+    let options : [String] = ["Sell Products","Buy Products","Edit Profile","Change Password","Messages","Help Center","Logout"]
+    
+    let optionImgs : [String] = ["ic_sell_product_new","ic_buy_products_new","ic_edit_new","ic_changepassword_new","ic_messages_new","ic_about_us_new","logout"]
+    @IBOutlet weak var tblProfile: UITableView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tblProfile.tableFooterView = UIView()
     }
     
     @IBAction func btnBackAction(_ sender: UIButton) {
@@ -45,7 +47,7 @@ extension MyProfileTabVC: UITableViewDelegate, UITableViewDataSource {
         {
             cell.viewBgMessges.isHidden = false
         }
-    
+        
         return cell
     }
     
@@ -53,33 +55,35 @@ extension MyProfileTabVC: UITableViewDelegate, UITableViewDataSource {
     {
         
         switch indexPath.row {
-        case 0:
+        case 0: // Sell products
             let resultVC : SellProductsVC = Utilities.viewController(name: "SellProductsVC", storyboard: "MyProfile") as! SellProductsVC
             self.navigationController?.pushViewController(resultVC, animated: true)
-        case 1:
-            let resultVC : BuyProductsVC = Utilities.viewController(name: "BuyProductsVC", storyboard: "MyProfile") as! BuyProductsVC
-            self.navigationController?.pushViewController(resultVC, animated: true)
-        case 2:
+        case 1: // Buy Products
+            //            let resultVC : BuyProductsVC = Utilities.viewController(name: "BuyProductsVC", storyboard: "MyProfile") as! BuyProductsVC
+            //            self.navigationController?.pushViewController(resultVC, animated: true)
+            
+            let searchVC: SearchVC = Utilities.viewController(name: "SearchVC", storyboard: "Home") as! SearchVC
+            self.navigationController?.pushViewController(searchVC, animated: true)
+            
+        case 2: // Edit profile
             let resultVC : EditProfileVC = Utilities.viewController(name: "EditProfileVC", storyboard: "MyProfile") as! EditProfileVC
             self.navigationController?.pushViewController(resultVC, animated: true)
-        case 3:
+        case 3: // Change Pass
             let resultVC : ChangePasswordVC = Utilities.viewController(name: "ChangePasswordVC", storyboard: "MyProfile") as! ChangePasswordVC
             self.navigationController?.pushViewController(resultVC, animated: true)
-        case 4:
+        case 4: // Messages
             let resultVC : MessagesVC = Utilities.viewController(name: "MessagesVC", storyboard: "MyProfile") as! MessagesVC
             self.navigationController?.pushViewController(resultVC, animated: true)
-        case 5:
-            let resultVC : AboutIFlipAllVC = Utilities.viewController(name: "AboutIFlipAllVC", storyboard: "MyProfile") as! AboutIFlipAllVC
+        case 5: // Help Center
+            let resultVC : HelpCenterVC = Utilities.viewController(name: "HelpCenterVC", storyboard: "MyProfile") as! HelpCenterVC
             self.navigationController?.pushViewController(resultVC, animated: true)
         case 6:
             let resultVC : TermsAndConditionsVC = Utilities.viewController(name: "TermsAndConditionsVC", storyboard: "MyProfile") as! TermsAndConditionsVC
             resultVC.titleText = "Terms & Conditions"
-            resultVC.link = "https://www.google.com"
             self.navigationController?.pushViewController(resultVC, animated: true)
         case 7:
             let resultVC : TermsAndConditionsVC = Utilities.viewController(name: "TermsAndConditionsVC", storyboard: "MyProfile") as! TermsAndConditionsVC
             resultVC.titleText = "Privacy Policy"
-            resultVC.link = "https://www.google.com"
             self.navigationController?.pushViewController(resultVC, animated: true)
         case 8:
             let resultVC : ContactUsVC = Utilities.viewController(name: "ContactUsVC", storyboard: "MyProfile") as! ContactUsVC
@@ -87,7 +91,6 @@ extension MyProfileTabVC: UITableViewDelegate, UITableViewDataSource {
         case 9:
             let resultVC : TermsAndConditionsVC = Utilities.viewController(name: "TermsAndConditionsVC", storyboard: "MyProfile") as! TermsAndConditionsVC
             resultVC.titleText = "Safety Tips"
-            resultVC.link = "https://www.google.com"
             self.navigationController?.pushViewController(resultVC, animated: true)
         case 10:
             let resultVC : FAQVC = Utilities.viewController(name: "FAQVC", storyboard: "MyProfile") as! FAQVC
@@ -97,23 +100,23 @@ extension MyProfileTabVC: UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(resultVC, animated: true)
         case 12:
             let alert = UIAlertController(title: "", message: "Are you sure you want to logout?".localized, preferredStyle: .alert)
-                   alert.addAction(UIAlertAction(title: "Cancel".localized, style: .default) { action in
-                   })
-                   
-                   alert.addAction(UIAlertAction(title: "Logout".localized, style: .destructive) { action in
-                       
-                       kCurrentUser.logout()
-                       let resultVC : LoginVC = Utilities.viewController(name: "LoginVC", storyboard: "Authentication") as! LoginVC
-                       self.navigationController?.pushViewController(resultVC, animated: true)
-                    
-                   })
-                   
-                   self.present(alert, animated: true, completion: nil)
-
+            alert.addAction(UIAlertAction(title: "Cancel".localized, style: .default) { action in
+            })
+            
+            alert.addAction(UIAlertAction(title: "Logout".localized, style: .destructive) { action in
+                
+                kCurrentUser.logout()
+                let resultVC : LoginVC = Utilities.viewController(name: "LoginVC", storyboard: "Authentication") as! LoginVC
+                self.navigationController?.pushViewController(resultVC, animated: true)
+                
+            })
+            
+            self.present(alert, animated: true, completion: nil)
+            
         default:
             print("Error in selection")
         }
     }
     
-
+    
 }

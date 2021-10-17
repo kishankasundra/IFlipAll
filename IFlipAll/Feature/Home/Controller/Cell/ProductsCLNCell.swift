@@ -11,4 +11,16 @@ import UIKit
 class ProductsCLNCell: UICollectionViewCell {
     
     @IBOutlet weak var imgProductList: UIImageView!
+    
+    @IBOutlet weak var priceView: UIView!
+    @IBOutlet weak var lblPrice: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        DispatchQueue.main.async {
+            self.priceView.layer.cornerRadius = 10.0
+        }
+    }
+    
 }

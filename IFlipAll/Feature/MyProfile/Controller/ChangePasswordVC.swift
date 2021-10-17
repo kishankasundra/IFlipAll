@@ -25,7 +25,19 @@ class ChangePasswordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let oldPassAttributedPlaceholder = NSAttributedString(string: "Old Password",
+                                                    attributes: [NSAttributedString.Key.foregroundColor: appColors.purpleColor])
+        
+        let newPassAttributedPlaceholder = NSAttributedString(string: "New Password",
+                                                     attributes: [NSAttributedString.Key.foregroundColor: appColors.purpleColor])
+
+        let confirmNewPassAttributedPlaceholder = NSAttributedString(string: "Confirm New Password",
+                                                     attributes: [NSAttributedString.Key.foregroundColor: appColors.purpleColor])
+        
+        txtOldPassword.attributedPlaceholder = oldPassAttributedPlaceholder
+        txtNewPassword.attributedPlaceholder = newPassAttributedPlaceholder
+        txtConfirmNewPassword.attributedPlaceholder = confirmNewPassAttributedPlaceholder
+
     }
     
     @IBAction func btnBackAction(_ sender: UIButton) {

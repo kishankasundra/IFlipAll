@@ -11,17 +11,11 @@ import UIKit
 class FaqTBLCell: UITableViewCell {
 
     @IBOutlet weak var lblFaqList: UILabel!
+    @IBOutlet weak var lblFaqAnswer: UILabel!
     @IBOutlet weak var imgFaqList: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

@@ -73,7 +73,7 @@ class HomeVC: UIViewController {
         switch selectedTab {
             
                 case 0:
-                    self.imgHome.tintColor = appColors.green
+                    self.imgHome.tintColor = appColors.purpleColor
                     //self.lblDashboardTitle.text = "Dashboard"
                     //?self.homeTabVC.messagesVCTabClick()
                     break
@@ -84,7 +84,7 @@ class HomeVC: UIViewController {
                     //self.gymVC.gymVCTabClick()
                     break
                 case 2:
-                    self.imgProfile.tintColor = appColors.green
+                    self.imgProfile.tintColor = appColors.purpleColor
                     //self.imgMyApplication.tintColor = appColors.textDudhiya
                     //self.lblDashboardTitle.text = "My Applications"
                     //self.profileVC.profileVCTabClick()

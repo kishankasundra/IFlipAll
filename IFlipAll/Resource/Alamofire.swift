@@ -16,7 +16,7 @@ enum Environment: String {
     
     case Production = ""
     case Prod = "iji"
-    case Dev = "https://54.152.99.160//IFLIPALL/Api/"
+    case Dev = "http://3.141.21.255/IFLIPALL/index.php/Api/" //"http://54.152.99.160/IFILLPILL/index.php/Api/"
     
 }
 //API Environment set up
@@ -45,8 +45,14 @@ enum APIAction : String
     case ViewSelectedProduct = "ViewSelectedProduct"
     case DeleteProduct = "DeleteProduct"
     case FAQList = "FAQList"
+    case About = "About"
     case PrivacyPolicy = "PrivacyPolicy"
     case TermsCondition = "TermsCondition"
+    case ReportProduct = "ReportProduct"
+    case SaveProduct = "SaveProduct"
+    case ViewSaveProductList = "ViewSaveProductList"
+    case Contact = "Contact"
+    case SafetyTip = "SafetyTip"
     
 }
 

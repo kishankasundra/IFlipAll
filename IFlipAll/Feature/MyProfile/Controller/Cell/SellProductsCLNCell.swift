@@ -15,6 +15,18 @@ class SellProductsCLNCell: UICollectionViewCell {
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var btnEdit: UIButton!
-    @IBOutlet weak var lblEdit: UILabel!
     
+    @IBOutlet weak var btnDelete: UIButton!
+    @IBOutlet weak var btnSold: UIButton!
+    
+    @IBOutlet weak var priceView: UIView!
+    @IBOutlet weak var statusView: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        DispatchQueue.main.async {
+            self.btnEdit.layer.cornerRadius = self.btnEdit.bounds.height / 2.0
+        }
+    }
 }

@@ -15,6 +15,8 @@ class CategoryList
     
     var detail : [CategoryDetail] = [CategoryDetail]()
     
+    var subCategorydetail : [SubCategoryDetail] = [SubCategoryDetail]()
+    
     func update(_ data:JSON)
     {
         
@@ -27,6 +29,18 @@ class CategoryList
         
     }
     
+    
+    func updateSubCategory(_ data:JSON)
+    {
+        
+        for (_,obj) in (data)
+        {
+            let temp : SubCategoryDetail = SubCategoryDetail()
+            temp.updateSubCategory(obj)
+            self.subCategorydetail.append(temp)
+        }
+        
+    }
 }
 
 class CategoryDetail
@@ -40,6 +54,21 @@ class CategoryDetail
         CatId = strFromJSON(data["CatId"])
         CategoryName = strFromJSON(data["CategoryName"])
         Icon = strFromJSON(data["Icon"])
+    
+    }
+}
+
+class SubCategoryDetail
+{
+    var CategoryId = ""
+    var SubCategoryName = ""
+    var SubCategoryId = ""
+    
+    func updateSubCategory(_ data : JSON)
+    {
+        CategoryId = strFromJSON(data["CategoryId"])
+        SubCategoryName = strFromJSON(data["SubCategoryName"])
+        SubCategoryId = strFromJSON(data["SubCategoryId"])
     
     }
 }

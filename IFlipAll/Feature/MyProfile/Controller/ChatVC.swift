@@ -13,6 +13,7 @@ var activeChatUserId = ""
 class ChatVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var clnSuggestions: UICollectionView!
     @IBOutlet weak var cnstTextViewHeight: NSLayoutConstraint!
     @IBOutlet weak var txtMessage: UITextView!
     @IBOutlet weak var imgUser: UIImageView!
@@ -32,6 +33,8 @@ class ChatVC: UIViewController {
     var ref: DatabaseReference!
     var chatRef: DatabaseReference!
     var tokenRef: DatabaseReference!
+    
+    var arrSuggestedMessage: [String] = ["Hi, is this item available?", "Where are you located?", "Is the price negotiation?"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -289,4 +292,32 @@ extension ChatVC {
             task.resume()
     }
 
+}
+
+// MARK: -  UICollectionViewDataSource, UICollectionViewDelegate Methods
+extension ChatVC: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrSuggestedMessage.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let chatSuggestionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChatSuggestionCell", for: indexPath) as? ChatSuggestionCell else {
+            return UICollectionViewCell()
+        }
+        chatSuggestionCell.prepareCell(suggestedMessage: arrSuggestedMessage[indexPath.item])
+        return chatSuggestionCell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+        txtMessage.text = arrSuggestedMessage[indexPath.item]
+    }
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout Methods
+extension ChatVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let suggestedMessage = arrSuggestedMessage[indexPath.item]
+        let size = suggestedMessage.size(withAttributes: [NSAttributedString.Key.font : UIFont(name: "", size: 12.0) ?? .systemFont(ofSize: 12.0)])
+        return CGSize(width: size.width + 16.0, height: 25.0)
+    }
 }

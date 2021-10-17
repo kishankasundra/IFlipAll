@@ -14,6 +14,8 @@ class AppString
     let invalid_email_msg = "Please enter valid email"
     let empty_password_msg = "Please enter password"
     let empty_full_name_msg = "Please enter full name"
+    let empty_name_msg = "Please enter name"
+    let empty_message_msg = "Please enter message"
     
     let empty_new_password_msg = "Please enter new password"
     let empty_old_password_msg = "Please enter old password"
