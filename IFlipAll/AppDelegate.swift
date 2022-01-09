@@ -12,7 +12,8 @@ import NVActivityIndicatorView
 import GoogleSignIn
 import AWSS3
 import Firebase
-
+import GoogleMaps
+import GooglePlaces
 var AppInstance : AppDelegate!
 var locationManager = CLLocationManager()
 @UIApplicationMain
@@ -29,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GIDSignIn.sharedInstance()?.clientID = "620251207827-rlq0jqp8re3cija8l2u387iqiuacs7hj.apps.googleusercontent.com"
        // sleep(3)
+        GMSServices.provideAPIKey("AIzaSyDWHhUs5bVBM9rsZyV13RjIrX-hKCsdev8")//("AIzaSyD0ERNkAIOsqmWPVCrkHI6auh9xTYG7hho")
+        GMSPlacesClient.provideAPIKey("AIzaSyDWHhUs5bVBM9rsZyV13RjIrX-hKCsdev8")//("AIzaSyD0ERNkAIOsqmWPVCrkHI6auh9xTYG7hho")//("AIzaSyC2jLVPW97sJdsq3ZoeUQmPyn1VTm2s9_M")
+
         IQKeyboardManager.shared.enable = true
         FirebaseApp.configure()
         locationManager.requestWhenInUseAuthorization()
