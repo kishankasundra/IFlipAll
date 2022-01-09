@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -19,7 +19,7 @@
         <array key="Syne-Medium.ttf">
             <string>Syne-Medium</string>
         </array>
-        <array key="Syne-Regular.ttf">
+        <array key="Syne-VariableFont_wght.ttf">
             <string>Syne-Regular</string>
         </array>
     </customFonts>
@@ -56,7 +56,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Products" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krz-h1-2JW">
-                                                <rect key="frame" x="152.5" y="14.5" width="109.5" height="21"/>
+                                                <rect key="frame" x="141" y="14" width="132.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -108,10 +108,10 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="163" height="137"/>
                                                                         </imageView>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91R-Fa-GVi">
-                                                                            <rect key="frame" x="92.5" y="102" width="60.5" height="28"/>
+                                                                            <rect key="frame" x="91" y="102" width="62" height="28"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 299" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtb-sa-wpy">
-                                                                                    <rect key="frame" x="10" y="4.5" width="40.5" height="19"/>
+                                                                                    <rect key="frame" x="10" y="2.5" width="42" height="23.5"/>
                                                                                     <fontDescription key="fontDescription" name="BeVietnam-ExtraBold" family="Be Vietnam" pointSize="16"/>
                                                                                     <color key="textColor" red="0.12941176469999999" green="0.3294117647" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -310,7 +310,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sell Products" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8N-3T-TBH">
-                                                <rect key="frame" x="153.5" y="14.5" width="107.5" height="21"/>
+                                                <rect key="frame" x="142.5" y="14" width="129" height="22"/>
                                                 <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -366,10 +366,10 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="250" height="137"/>
                                                                         </imageView>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khD-gr-ZYS">
-                                                                            <rect key="frame" x="179.5" y="102" width="60.5" height="28"/>
+                                                                            <rect key="frame" x="178" y="102" width="62" height="28"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 299" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ4-LE-LJV">
-                                                                                    <rect key="frame" x="10" y="4.5" width="40.5" height="19"/>
+                                                                                    <rect key="frame" x="10" y="2.5" width="42" height="23.5"/>
                                                                                     <fontDescription key="fontDescription" name="BeVietnam-ExtraBold" family="Be Vietnam" pointSize="16"/>
                                                                                     <color key="textColor" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -389,10 +389,10 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </view>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAj-kV-Tsb">
-                                                                            <rect key="frame" x="12" y="102" width="79" height="28"/>
+                                                                            <rect key="frame" x="12" y="102" width="82.5" height="28"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7p1-mN-uIf">
-                                                                                    <rect key="frame" x="10" y="4.5" width="59" height="19"/>
+                                                                                    <rect key="frame" x="10" y="2.5" width="62.5" height="23.5"/>
                                                                                     <fontDescription key="fontDescription" name="BeVietnam-ExtraBold" family="Be Vietnam" pointSize="16"/>
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
@@ -442,16 +442,16 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Sofa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1b-yJ-ujJ">
-                                                                    <rect key="frame" x="10" y="151" width="70" height="19"/>
+                                                                    <rect key="frame" x="10" y="151" width="85.5" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="16"/>
                                                                     <color key="textColor" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jf8-00-NqY">
-                                                                    <rect key="frame" x="114" y="145" width="126" height="31"/>
+                                                                    <rect key="frame" x="114" y="145" width="126" height="32"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNR-0H-j2d">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="58" height="31"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="58" height="32"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="58" id="SWH-DG-mt1"/>
                                                                             </constraints>
@@ -461,7 +461,7 @@
                                                                             </state>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBY-Xc-Wvl">
-                                                                            <rect key="frame" x="68" y="0.0" width="58" height="31"/>
+                                                                            <rect key="frame" x="68" y="0.0" width="58" height="32"/>
                                                                             <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="16"/>
                                                                             <state key="normal" title="Sold">
                                                                                 <color key="titleColor" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -590,7 +590,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help Center" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FF3-eG-hjc">
-                                        <rect key="frame" x="153.5" y="23" width="107.5" height="24"/>
+                                        <rect key="frame" x="150" y="23" width="114" height="24"/>
                                         <fontDescription key="fontDescription" name="Syne-Medium" family="Syne" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -611,7 +611,7 @@
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="8" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HelpCenterCell" textLabel="3ct-Am-ArR" imageView="6i6-7i-YOB" style="IBUITableViewCellStyleDefault" id="Pbu-Nl-NEW">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pbu-Nl-NEW" id="d7A-Pl-ZiV">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -721,7 +721,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7u-pW-wHI">
-                                                        <rect key="frame" x="163.5" y="14.5" width="87" height="21"/>
+                                                        <rect key="frame" x="153" y="14" width="108" height="22"/>
                                                         <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1146,7 +1146,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGK-aM-31L">
-                                                        <rect key="frame" x="133.5" y="14.5" width="147.5" height="21"/>
+                                                        <rect key="frame" x="117" y="14" width="180" height="22"/>
                                                         <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1550,7 +1550,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0Q-sa-jVD">
-                                                <rect key="frame" x="161" y="14.5" width="92" height="21"/>
+                                                <rect key="frame" x="148.5" y="14" width="117.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1580,7 +1580,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationTBLCell" id="6sM-WH-XwD" customClass="NotificationTBLCell" customModule="IFlipAll" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="24.5" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6sM-WH-XwD" id="rAq-CU-2IO">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -1720,7 +1720,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAQ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKm-Hv-k24">
-                                                <rect key="frame" x="189.5" y="14.5" width="35" height="21"/>
+                                                <rect key="frame" x="186" y="14" width="42.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1754,7 +1754,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FaqTBLCell" rowHeight="100" id="gaD-5L-2eo" customClass="FaqTBLCell" customModule="IFlipAll" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="24.5" width="414" height="100"/>
+                                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gaD-5L-2eo" id="DM8-v6-wWj">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -1791,7 +1791,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAQ Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je3-Wg-qhs">
-                                                                    <rect key="frame" x="57" y="24.5" width="93.5" height="17.5"/>
+                                                                    <rect key="frame" x="57" y="24" width="98" height="18"/>
                                                                     <fontDescription key="fontDescription" name="Syne-Medium" family="Syne" pointSize="15"/>
                                                                     <color key="textColor" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1923,7 +1923,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About I FlipAll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtk-Tc-cQ5">
-                                                <rect key="frame" x="151" y="14.5" width="112" height="21"/>
+                                                <rect key="frame" x="139.5" y="14" width="135.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -2031,7 +2031,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms &amp; Conditions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfe-oU-Ryh">
-                                                <rect key="frame" x="128.5" y="14.5" width="157" height="21"/>
+                                                <rect key="frame" x="111.5" y="14" width="191.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -2137,7 +2137,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWr-JI-Ifi">
-                                                <rect key="frame" x="161.5" y="14.5" width="91.5" height="21"/>
+                                                <rect key="frame" x="151" y="14" width="112.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -2537,7 +2537,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNz-yG-auS">
-                                                <rect key="frame" x="166" y="14.5" width="82.5" height="21"/>
+                                                <rect key="frame" x="157" y="14" width="100" height="22"/>
                                                 <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -2571,7 +2571,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TblMessageListCell" id="eDv-Hg-KRZ" customClass="TblMessageListCell" customModule="IFlipAll" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="24.5" width="414" height="93"/>
+                                                <rect key="frame" x="0.0" y="28" width="414" height="93"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eDv-Hg-KRZ" id="UTH-qx-rMC">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
@@ -2611,7 +2611,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSK-fM-ism">
-                                                                    <rect key="frame" x="346.5" y="18.5" width="35.5" height="20"/>
+                                                                    <rect key="frame" x="350.5" y="18.5" width="31.5" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="7sb-XD-xRf"/>
                                                                     </constraints>
@@ -2739,7 +2739,7 @@
                                         <rect key="frame" x="25" y="309" width="364" height="200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwB-Gj-2zm">
-                                                <rect key="frame" x="91" y="25" width="182.5" height="44"/>
+                                                <rect key="frame" x="87.5" y="25" width="189.5" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="cwq-oK-klp"/>
                                                 </constraints>
@@ -2963,13 +2963,16 @@ delete this post</string>
                                         <state key="normal" title="Safety Tips" image="ic_safety_tips_new">
                                             <color key="titleColor" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnSafetyTipsAction:" destination="ipT-cY-Wfd" eventType="touchUpInside" id="Uzp-SN-XFW"/>
+                                        </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eOK-po-rG5">
                                         <rect key="frame" x="19" y="89" width="375" height="623"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChatReceiverCell" rowHeight="65" id="eJA-Sv-RUe" customClass="ChatReceiverCell" customModule="IFlipAll" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="24.5" width="375" height="65"/>
+                                                <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eJA-Sv-RUe" id="Trj-N3-5hZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
@@ -3073,7 +3076,7 @@ delete this post</string>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChatSenderCell" rowHeight="65" id="ShP-JH-iiy" customClass="ChatSenderCell" customModule="IFlipAll" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="89.5" width="375" height="65"/>
+                                                <rect key="frame" x="0.0" y="93" width="375" height="65"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ShP-JH-iiy" id="tvi-pE-C5C">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
@@ -3439,9 +3442,12 @@ delete this post</string>
                                                     <constraint firstAttribute="height" constant="44" id="URx-uW-dfN"/>
                                                     <constraint firstAttribute="width" constant="44" id="i0n-tn-T4g"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="btnBackAction:" destination="maT-a2-zve" eventType="touchUpInside" id="ibY-Hv-Mho"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Safety Tips" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPE-4a-12k">
-                                                <rect key="frame" x="162" y="14.5" width="90" height="21"/>
+                                                <rect key="frame" x="152.5" y="14" width="109.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -3475,7 +3481,7 @@ delete this post</string>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SafetyTipsCell" rowHeight="100" id="out-Aa-fC4" customClass="SafetyTipsCell" customModule="IFlipAll" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="24.5" width="414" height="100"/>
+                                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="out-Aa-fC4" id="jz5-Ly-kKa">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -3492,7 +3498,7 @@ delete this post</string>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Safety Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEo-Nx-GGj">
-                                                                    <rect key="frame" x="0.0" y="16" width="107" height="17.5"/>
+                                                                    <rect key="frame" x="0.0" y="16" width="114.5" height="18"/>
                                                                     <fontDescription key="fontDescription" name="Syne-Medium" family="Syne" pointSize="15"/>
                                                                     <color key="textColor" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -3505,7 +3511,7 @@ delete this post</string>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4u-XW-WlS">
-                                                                    <rect key="frame" x="0.0" y="49.5" width="382" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="50" width="382" height="0.0"/>
                                                                     <fontDescription key="fontDescription" name="Syne-Regular" family="Syne" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>

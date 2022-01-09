@@ -29,33 +29,19 @@ class HelpCenterView: UIView {
     
     
     @IBAction func btnFBAction(_ sender: UIButton) {
-        let application = UIApplication.shared
-        if let fbURL = URL(string: "https://www.facebook.com/IflipAll-105905531468489/"), application.canOpenURL(fbURL) {
-            application.canOpenURL(fbURL)
-        }
+        Utilities.openURL(SocialLinks.facebook.rawValue)
     }
     
     @IBAction func btnTwiterAction(_ sender: UIButton) {
-        let application = UIApplication.shared
-        if let twiterURL = URL(string: "https://twitter.com/iflipall"), application.canOpenURL(twiterURL) {
-            application.canOpenURL(twiterURL)
-        }
+        Utilities.openURL(SocialLinks.twitter.rawValue)
     }
     
     @IBAction func btnPinterestAction(_ sender: UIButton) {
-        let application = UIApplication.shared
-        if let pinterestURL = URL(string: "https://in.pinterest.com/IflipAl/"), application.canOpenURL(pinterestURL) {
-            application.canOpenURL(pinterestURL)
-        }
-
+        Utilities.openURL(SocialLinks.pinterest.rawValue)
     }
     
     @IBAction func btnInstaAction(_ sender: UIButton) {
-        let application = UIApplication.shared
-        if let instaURL = URL(string: "https://www.instagram.com/iflipall/"), application.canOpenURL(instaURL) {
-            application.canOpenURL(instaURL)
-        }
-
+        Utilities.openURL(SocialLinks.instagram.rawValue)
     }
     
     @IBAction func btnPrivacyPolicyAction(_ sender: UIButton) {

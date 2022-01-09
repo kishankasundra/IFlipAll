@@ -9,6 +9,9 @@
 import UIKit
 
 var selectedTab : Int = 0
+var selectedLat = 0.0
+var selectedLong = 0.0
+
 class HomeVC: UIViewController {
 
     @IBOutlet weak var scrollContainer: UIScrollView!
@@ -32,7 +35,6 @@ class HomeVC: UIViewController {
         self.setPlaceHolder()
         self.scrollContainer.isScrollEnabled = false
         UIApplication.shared.statusBarStyle = .lightContent
-      
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,6 +111,7 @@ class HomeVC: UIViewController {
                    self.viewContainer.addSubview(self.homeTabVC.view)
                    self.homeTabVC.view.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: height)
                    self.homeTabVC.didMove(toParent: self)
+                   self.homeTabVC.delegate = self
                    self.addChild(self.homeTabVC)
 
                    self.viewContainer.addSubview(self.postAnItemTabVC.view)
@@ -129,6 +132,15 @@ class HomeVC: UIViewController {
         imgHome.image = imgHome.image?.withRenderingMode(.alwaysTemplate)
         //imgSell.image = imgSell.image?.withRenderingMode(.alwaysTemplate)
         imgProfile.image = imgProfile.image?.withRenderingMode(.alwaysTemplate)
+    }
+    
+
+}
+
+extension HomeVC: HomeTabVCDelegate {
+    func btnAddItemAction() {
+        selectedTab = 1
+        self.changeTabColor()
     }
 }
 

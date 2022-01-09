@@ -86,7 +86,7 @@ class ProductDetailVC: UIViewController, MKMapViewDelegate {
     // MKMapViewDelegate
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let circleRenderer = MKCircleRenderer(overlay: overlay)
-        circleRenderer.strokeColor = appColors.green
+        circleRenderer.strokeColor = appColors.purpleColor
         circleRenderer.fillColor = appColors.green.withAlphaComponent(0.5)
         circleRenderer.lineWidth = 1.0
         return circleRenderer
@@ -98,7 +98,7 @@ class ProductDetailVC: UIViewController, MKMapViewDelegate {
         let text = productDetail.CategoryName
         let description = productDetail.Description
         
-        let imageData = URL(string: self.productDetail.Images[0])?.dataRepresentation
+        let imageData = URL(string: self.productDetail.Images.first ?? "")?.dataRepresentation
         // set up activity view controller
         let activityItems = [ text, description, imageData ?? Data() ] as [Any]
         let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)

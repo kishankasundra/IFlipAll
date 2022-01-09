@@ -90,6 +90,13 @@ PODS:
     - nanopb (~> 2.30906.0)
   - GoogleDataTransport (8.1.0):
     - nanopb (~> 2.30906.0)
+  - GoogleMaps (4.0.0):
+    - GoogleMaps/Maps (= 4.0.0)
+  - GoogleMaps/Base (4.0.0)
+  - GoogleMaps/Maps (4.0.0):
+    - GoogleMaps/Base
+  - GooglePlaces (4.0.0):
+    - GoogleMaps/Base (= 4.0.0)
   - GoogleSignIn (5.0.2):
     - AppAuth (~> 1.2)
     - GTMAppAuth (~> 1.0)
@@ -146,6 +153,8 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Messaging
   - FloatRatingView (~> 4)
+  - GoogleMaps
+  - GooglePlaces
   - GoogleSignIn
   - IQKeyboardManagerSwift
   - NVActivityIndicatorView/AppExtension
@@ -176,6 +185,8 @@ SPEC REPOS:
     - FloatRatingView
     - GoogleAppMeasurement
     - GoogleDataTransport
+    - GoogleMaps
+    - GooglePlaces
     - GoogleSignIn
     - GoogleUtilities
     - GTMAppAuth
@@ -211,6 +222,8 @@ SPEC CHECKSUMS:
   FloatRatingView: bb6bdddfbeec51b1d387b4bd50abc27b4dfccd48
   GoogleAppMeasurement: 8d3c0aeede16ab7764144b5a4ca8e1d4323841b7
   GoogleDataTransport: 116c84c4bdeb76be2a7a46de51244368f9794eab
+  GoogleMaps: b7f7fc569a9b354a3af0d9729dbec40957b7d41e
+  GooglePlaces: ca8d4aba09ba79e0a829cf1dca03a41de6a09016
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: 3dc4ff0d5e4840e2fa8eef0889620e8c33d4218c
   GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
@@ -224,6 +237,6 @@ SPEC CHECKSUMS:
   SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 73b316710511fc2decf80f1328990d0f14a46c76
+PODFILE CHECKSUM: d45165e6a94fb9ed27dfc0d6a6375e6f7a4744f0
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.0

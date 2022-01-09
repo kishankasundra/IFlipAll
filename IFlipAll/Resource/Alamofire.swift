@@ -19,6 +19,14 @@ enum Environment: String {
     case Dev = "http://3.141.21.255/IFLIPALL/index.php/Api/" //"http://54.152.99.160/IFILLPILL/index.php/Api/"
     
 }
+
+enum SocialLinks: String {
+    case facebook = "https://www.facebook.com/IflipAll-105905531468489/"
+    case pinterest = "https://in.pinterest.com/IflipAl/"
+    case twitter = "https://twitter.com/iflipall/"
+    case instagram = "https://www.instagram.com/iflipall/"
+}
+
 //API Environment set up
 let apiEnvironment : Environment = .Dev
 // Base Api URL

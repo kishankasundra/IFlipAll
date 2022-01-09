@@ -14,7 +14,7 @@ import AWSS3
 import Firebase
 
 var AppInstance : AppDelegate!
-
+var locationManager = CLLocationManager()
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        // sleep(3)
         IQKeyboardManager.shared.enable = true
         FirebaseApp.configure()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         return true
     }
     
@@ -150,4 +152,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController!.present(alert, animated: true, completion: nil)
     }
     
+    func getCurrentLocation() -> CLLocationCoordinate2D?
+    {
+        if let loc = locationManager.location
+        {
+            return CLLocationCoordinate2D(latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude)
+        }
+        else
+        {
+            return nil
+        }
+    }
 }

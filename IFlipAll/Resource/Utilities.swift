@@ -30,6 +30,11 @@ class Utilities
         return ""
     }
     
+    class func openURL(_ url: String) {
+        guard let url = URL(string: url) else { return }
+        UIApplication.shared.open(url)
+    }
+    
     class func playSound()
     {
         

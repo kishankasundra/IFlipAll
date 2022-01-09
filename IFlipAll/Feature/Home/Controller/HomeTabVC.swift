@@ -8,6 +8,12 @@
 
 import UIKit
 import SDWebImage
+import GoogleMaps
+import GooglePlaces
+
+protocol HomeTabVCDelegate {
+    func btnAddItemAction()
+}
 
 class HomeTabVC: UIViewController {
     
@@ -33,15 +39,16 @@ class HomeTabVC: UIViewController {
     @IBOutlet weak var freeSeparatorView: UIView!
     @IBOutlet weak var requestSeparatorView: UIView!
     @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var lblLocation: UILabel!
     
     var filterProductByProductType: [ProductDetail] = []
-    
     let fetcher = ImageSizeFetcher()
+    var delegate: HomeTabVCDelegate?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setCurrentLocation()
         if let layout = productsCLNView?.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
         }
@@ -50,8 +57,6 @@ class HomeTabVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
         self.APICategoryList()
         self.APIAllProdcutList()
         profileImageView.contentMode = profileImageView.image == UIImage(named: "ic_user_new") ? .center : .scaleAspectFill
@@ -60,6 +65,7 @@ class HomeTabVC: UIViewController {
     }
     
     @IBAction func btnAddItemAction(_ sender: UIButton) {
+        self.delegate?.btnAddItemAction()
     }
     
     @IBAction func btnSearchAction(_ sender: UIButton) {
@@ -82,7 +88,7 @@ class HomeTabVC: UIViewController {
             filterProductByProductType = productlist.productdetail.filter({ $0.ProductType == "2" })
             btnAddItem.setTitle("Add Free Item", for: .normal)
         case 33: // Request Button
-            requestSeparatorView.backgroundColor = appColors.green
+            requestSeparatorView.backgroundColor = appColors.purpleColor
             filterProductByProductType = productlist.productdetail.filter({ $0.ProductType == "3" })
             btnAddItem.setTitle("Add Need Item", for: .normal)
         default: return
@@ -104,6 +110,19 @@ class HomeTabVC: UIViewController {
         
     }
     
+    func setCurrentLocation() {
+        
+        if let location = AppInstance.getCurrentLocation() {
+            selectedLat = location.latitude
+            selectedLong = location.longitude
+            let geocoder = GMSGeocoder()
+            geocoder.reverseGeocodeCoordinate(location) { response, error in
+                if let location = response?.firstResult() {
+                    self.lblLocation.text = "\(location.locality ?? "-".localized)"
+                }
+            }
+        }
+    }
     
 }
 

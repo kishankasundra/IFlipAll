@@ -21,5 +21,6 @@ target 'IFlipAll' do
     pod 'Firebase/Messaging'
     pod 'Firebase/Core'
     pod 'AWSS3'
-
+    pod 'GooglePlaces'
+    pod 'GoogleMaps'
 end

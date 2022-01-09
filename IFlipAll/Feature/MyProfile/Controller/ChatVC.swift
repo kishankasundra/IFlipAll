@@ -85,6 +85,11 @@ class ChatVC: UIViewController {
         
     }
 
+    @IBAction func btnSafetyTipsAction(_ sender: UIButton) {
+        let resultVC : SafetyTipsVC = Utilities.viewController(name: "SafetyTipsVC", storyboard: "MyProfile") as! SafetyTipsVC
+        self.navigationController?.pushViewController(resultVC, animated: true)
+    }
+    
     @IBAction func btnSebndAction(_ sender: UIButton) {
         
         self.txtMessage.text = Utilities.trim( self.txtMessage.text)

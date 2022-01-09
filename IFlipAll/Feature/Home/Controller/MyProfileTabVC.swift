@@ -39,14 +39,16 @@ extension MyProfileTabVC: UITableViewDelegate, UITableViewDataSource {
         cell.lblMenu.text = options[indexPath.row]
         cell.imgMenu.image = UIImage(named: optionImgs[indexPath.row]) ?? UIImage()
         
-        if cell.lblMenu.text != "Messages"
-        {
-            cell.viewBgMessges.isHidden = true
-        }
-        else
-        {
-            cell.viewBgMessges.isHidden = false
-        }
+        cell.viewBgMessges.isHidden = true
+        
+//        if cell.lblMenu.text != "Messages"
+//        {
+//            cell.viewBgMessges.isHidden = true
+//        }
+//        else
+//        {
+//            cell.viewBgMessges.isHidden = false
+//        }
         
         return cell
     }
