@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -1121,7 +1121,7 @@
                                                         </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileMenuTBLCell" id="22C-hH-zZw" customClass="ProfileMenuTBLCell" customModule="IFlipAll" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="28" width="382" height="62"/>
+                                                                <rect key="frame" x="0.0" y="44.5" width="382" height="62"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="22C-hH-zZw" id="tJg-0o-1qu">
                                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="62"/>
@@ -1320,7 +1320,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post An Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEy-Cb-t70">
-                                                <rect key="frame" x="144" y="14" width="126" height="22"/>
+                                                <rect key="frame" x="155" y="14.5" width="104" height="21"/>
                                                 <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1355,7 +1355,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Photos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qW-D7-WNk">
-                                                                <rect key="frame" x="16" y="20" width="106.5" height="16"/>
+                                                                <rect key="frame" x="16" y="20" width="87" height="16"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="16" id="WDw-sa-jdL"/>
                                                                 </constraints>
@@ -1499,7 +1499,7 @@
                                                         <rect key="frame" x="16" y="158" width="382" height="45"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPG-Ab-e7p">
-                                                                <rect key="frame" x="128" y="15" width="126.5" height="15"/>
+                                                                <rect key="frame" x="137.5" y="15" width="107.5" height="15"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera" translatesAutoresizingMaskIntoConstraints="NO" id="gN9-03-SxI">
                                                                         <rect key="frame" x="0.0" y="0.0" width="19" height="15"/>
@@ -1509,7 +1509,7 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Photo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93z-jz-0fb">
-                                                                        <rect key="frame" x="27" y="-2" width="99.5" height="19.5"/>
+                                                                        <rect key="frame" x="27" y="-2" width="80.5" height="19"/>
                                                                         <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="16"/>
                                                                         <color key="textColor" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -1700,6 +1700,9 @@
                                                                                     </imageView>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqC-Xz-TEw">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
+                                                                                        <connections>
+                                                                                            <action selector="btnCategoryDropDownAction:" destination="V5f-Vt-hCw" eventType="touchUpInside" id="ItA-Dk-0Ii"/>
+                                                                                        </connections>
                                                                                     </button>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2616,10 +2619,10 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
-                                                <color key="value" red="0.1647058824" green="0.6588235294" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
-                                                <color key="value" red="0.21960784310000001" green="0.86274509799999999" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -2924,7 +2927,7 @@
                                                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                     <userDefinedRuntimeAttribute type="color" keyPath="handleBorderColor">
-                                                                                        <color key="value" red="0.1764705882" green="0.70980392160000005" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <color key="value" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hideLabels" value="YES"/>
                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="labelsFixed" value="NO"/>
@@ -3008,10 +3011,10 @@
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
-                                                                                <color key="value" red="0.1647058824" green="0.6588235294" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="value" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
-                                                                                <color key="value" red="0.21960784310000001" green="0.86274509799999999" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="value" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                                 <real key="value" value="3"/>
@@ -3027,7 +3030,7 @@
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="Syne-Bold" family="Syne" pointSize="16"/>
                                                                         <state key="normal" title="Reset">
-                                                                            <color key="titleColor" red="0.1843137255" green="0.74117647060000003" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="titleColor" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -3092,7 +3095,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y50-vr-Upx"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oFE-Ez-9We" firstAttribute="top" secondItem="y50-vr-Upx" secondAttribute="top" id="01h-3Y-PMN"/>
                             <constraint firstItem="y50-vr-Upx" firstAttribute="bottom" secondItem="oFE-Ez-9We" secondAttribute="bottom" id="VkA-kr-16d"/>
@@ -3101,10 +3104,10 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
-                                <color key="value" red="0.1647058824" green="0.6588235294" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
-                                <color key="value" red="0.21960784310000001" green="0.86274509799999999" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.50196078430000002" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
@@ -3491,7 +3494,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SellProductTableViewCell" rowHeight="120" id="4r5-zq-GLu" customClass="SellProductTableViewCell" customModule="IFlipAll" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4r5-zq-GLu" id="A5w-Vw-xim">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -5169,7 +5172,7 @@ lorem lacinia hendrerit</string>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentListTBLCell" id="gdJ-r1-vmP" customClass="CommentListTBLCell" customModule="IFlipAll" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gdJ-r1-vmP" id="3ic-mv-R0c">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -5543,10 +5546,10 @@ lorem lacinia hendrerit</string>
         <image name="ic_add_photo" width="117" height="117"/>
         <image name="ic_back_arrow" width="21" height="18"/>
         <image name="ic_back_arrow_white" width="21" height="18"/>
-        <image name="ic_camera" width="19" height="15"/>
+        <image name="ic_camera" width="9.5" height="7.5"/>
         <image name="ic_category" width="15" height="12"/>
-        <image name="ic_checkbox_check" width="19" height="19"/>
-        <image name="ic_close_img" width="19" height="19"/>
+        <image name="ic_checkbox_check" width="9.5" height="9.5"/>
+        <image name="ic_close_img" width="9.5" height="9.5"/>
         <image name="ic_close_new" width="19" height="19"/>
         <image name="ic_comments" width="16" height="17"/>
         <image name="ic_edit_new" width="15" height="15"/>

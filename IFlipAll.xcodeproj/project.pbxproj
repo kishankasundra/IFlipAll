@@ -47,6 +47,8 @@
 		6C3A822525A9BBFE00939840 /* TblMessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE7FC362572AE6B000D9F84 /* TblMessageListCell.swift */; };
 		6C3A825225A9C27000939840 /* ChatReceiverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3A825025A9C27000939840 /* ChatReceiverCell.swift */; };
 		6C3A825325A9C27000939840 /* ChatSenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3A825125A9C27000939840 /* ChatSenderCell.swift */; };
+		6C9BA93A28A7B4D500F9520B /* splash.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6C9BA93928A7B4D300F9520B /* splash.gif */; };
+		6C9BA93C28A7B5B700F9520B /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9BA93B28A7B5B700F9520B /* iOSDevCenters+GIF.swift */; };
 		6C9D552625A8CC89006197F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C9D552525A8CC89006197F7 /* GoogleService-Info.plist */; };
 		6C9D554C25A8CEF6006197F7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9D554B25A8CEF6006197F7 /* Message.swift */; };
 		B453C62C66FD4A74ABE853B5 /* Pods_IFlipAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68EA314C686A9A015E3E802F /* Pods_IFlipAll.framework */; };
@@ -159,6 +161,8 @@
 		6C2D4590257E984900AC34BF /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		6C3A825025A9C27000939840 /* ChatReceiverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatReceiverCell.swift; sourceTree = "<group>"; };
 		6C3A825125A9C27000939840 /* ChatSenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatSenderCell.swift; sourceTree = "<group>"; };
+		6C9BA93928A7B4D300F9520B /* splash.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = splash.gif; sourceTree = "<group>"; };
+		6C9BA93B28A7B5B700F9520B /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 		6C9D552525A8CC89006197F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C9D554B25A8CEF6006197F7 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		DA12B3EC256A8DA8002997BA /* IFlipAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IFlipAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -378,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				2EF40142267F2976007CDF6B /* Vendors */,
+				6C9BA93928A7B4D300F9520B /* splash.gif */,
 				6C9D552525A8CC89006197F7 /* GoogleService-Info.plist */,
 				DA57FA7F2597012900311CCB /* AWSS3Manager.swift */,
 				DA57FA722595A45900311CCB /* Alamofire.swift */,
@@ -389,6 +394,7 @@
 				DA12B414256BFCFD002997BA /* String.swift */,
 				DA12B413256BFCFD002997BA /* SwiftyInnerShadowLayer.swift */,
 				DA12B416256BFCFD002997BA /* Utilities.swift */,
+				6C9BA93B28A7B5B700F9520B /* iOSDevCenters+GIF.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -634,6 +640,7 @@
 				6C25053A2577F0450036F6A8 /* BeVietnam-Thin.ttf in Resources */,
 				2EE3F18F267850A000764F9F /* HelpCenterView.xib in Resources */,
 				6C9D552625A8CC89006197F7 /* GoogleService-Info.plist in Resources */,
+				6C9BA93A28A7B4D500F9520B /* splash.gif in Resources */,
 				DA4B5B9F256D148E00D1171B /* Home.storyboard in Resources */,
 				DA39620325973C6900867A44 /* credentials.plist in Resources */,
 				DAEDEBBF257203F6007B591C /* MyProfile.storyboard in Resources */,
@@ -751,6 +758,7 @@
 				DAEDEBC625720A92007B591C /* LoginVC.swift in Sources */,
 				DA57FA7C2596022E00311CCB /* CategoryList.swift in Sources */,
 				DAE7FC592573DE06000D9F84 /* CommentVC.swift in Sources */,
+				6C9BA93C28A7B5B700F9520B /* iOSDevCenters+GIF.swift in Sources */,
 				DAE7FC412573782C000D9F84 /* VerifyEmailVC.swift in Sources */,
 				DAE7FC4325737879000D9F84 /* OTPVC.swift in Sources */,
 				DAEDEBC425720729007B591C /* BuyProductsCLNCell.swift in Sources */,

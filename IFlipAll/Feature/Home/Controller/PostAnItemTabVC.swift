@@ -8,6 +8,7 @@
 
 import UIKit
 import StoreKit
+import DropDown
 
 class PostAnItemTabVC: UIViewController {
     
@@ -148,6 +149,9 @@ class PostAnItemTabVC: UIViewController {
                 self.pickPhoto()
             }
             
+    }
+    
+    @IBAction func btnCategoryDropDownAction(_ sender: UIButton) {
     }
     
     @IBAction func btnBackAction(_ sender: UIButton) {
@@ -336,33 +340,6 @@ extension PostAnItemTabVC: UIImagePickerControllerDelegate, UINavigationControll
             self.isImageChangedProfile = true
 
             self.clnView.reloadData()
-//
-//            if self.selectedImages.count != self.imageDict.count
-//            {
-//
-//                if self.isImageChangedProfile {
-//                    AWSS3Manager.shared.uploadImage(image: img, progress: {progress in
-//                        AppInstance.showLoader()
-//                            print("Image Upload Progress", progress)
-//                        }, completion: {(res, error) in
-//
-//                            if res != nil, let url = res as? String {
-//
-//                             let firstImage: [String:String] = ["url":url]
-//                             self.imageDict.append(firstImage)
-//
-//                             print(self.imageDict)
-//                        AppInstance.hideLoader()
-//                            } else {
-//                                AppInstance.showMessages(message: error?.localizedDescription ?? "Error in image upload")
-//                            }
-//
-//
-//                        })
-//
-//                    }
-//
-//            }
             
         }
         self.dismiss(animated: true, completion: nil)

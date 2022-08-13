@@ -13,10 +13,10 @@ class SplashVC: UIViewController {
     @IBOutlet weak var imgLogo: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.imgLogo.rotate(duration: 3)
+        self.loadGIF()
+       // self.imgLogo.rotate(duration: 3)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [unowned self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
             
             if kCurrentUser.UserId != ""
             {
@@ -36,15 +36,12 @@ class SplashVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func loadGIF() {
+        let gif = UIImage.gifImageWithName("splash")
+        let imageView = UIImageView(image: gif)
+        imageView.frame = CGRect(x: 0.0, y: 0.0, width: ScreenWidth, height: ScreenHeight)
+        self.view.addSubview(imageView)
     }
-    */
 
 }
 

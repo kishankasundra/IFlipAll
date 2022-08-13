@@ -5,12 +5,11 @@
       "scale" : "1x"
     },
     {
-      "filename" : "ic_forgot_password_illustration@2x.png",
+      "filename" : "ic_forgot_password_img.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ic_forgot_password_illustration@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
