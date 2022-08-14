@@ -156,6 +156,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController!.present(alert, animated: true, completion: nil)
     }
     
+    func goToVC(_ vc : UIViewController, animated : Bool)
+    {
+        let nav = UINavigationController(rootViewController: vc)
+        nav.isNavigationBarHidden = true
+        nav.automaticallyAdjustsScrollViewInsets = false
+        
+        if animated
+        {
+            UIView.transition(with: self.window!, duration: 0.5, options: .transitionFlipFromLeft, animations: { () -> Void in
+                self.window!.rootViewController = nav
+            }, completion: { (finished: Bool) -> Void in
+                
+            })
+        }
+        else
+        {
+            self.window!.rootViewController = nav
+        }
+        
+    }
+    
+    func goToHomeVC(animated: Bool = false) {
+        
+        if kCurrentUser.UserId != "" {
+            let resultVC: HomeVC = Utilities.viewController(name: "HomeVC", storyboard: "Home") as! HomeVC
+            self.goToVC(resultVC, animated: animated)
+        } else {
+            self.goToLoginVC()
+        }
+    }
+    
+    func goToLoginVC(animated: Bool = false) {
+        
+        let resultVC : LoginVC = Utilities.viewController(name: "LoginVC", storyboard: "Authentication") as! LoginVC
+        self.goToVC(resultVC, animated: animated)
+    }
+    
+
+    
     func getCurrentLocation() -> CLLocationCoordinate2D?
     {
         if let loc = locationManager.location

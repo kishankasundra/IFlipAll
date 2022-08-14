@@ -31,7 +31,7 @@ class SellProductsVC: UIViewController {
     @objc func btnEditAction(_ sender : UIButton)
     {
         let resultVC : PostAnItemTabVC = Utilities.viewController(name: "PostAnItemTabVC", storyboard: "Home") as! PostAnItemTabVC
-        resultVC.isEdit = "Edit"
+        resultVC.isForEdit = true
 //        resultVC.myProductDetail = productlist.productdetail[sender.tag]
         self.navigationController?.pushViewController(resultVC, animated: true)
     }

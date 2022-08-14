@@ -39,13 +39,14 @@ class AppString
     let empty_chef_name_msg = "Please enter chef name"
     let empty_speciality_msg = "Please enter speciality"
     let empty_bio_msg = "Please enter bio"
-    let empty_address_msg = "Please enter address"
+    let empty_address_msg = "Please select address"
     
     let empty_product_title_msg = "Please enter product title"
     let empty_price_msg = "Please enter price"
     let empty_product_condition_msg = "Please enter product condition"
     let empty_description_msg = "Please enter description"
     let empty_image_msg = "Please add image"
+    let empty_product_category = "Please select category"
         
 }
 

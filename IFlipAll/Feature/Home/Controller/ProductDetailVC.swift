@@ -31,6 +31,7 @@ class ProductDetailVC: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var btnReport: UIButton!
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet weak var btnChat: UIButton!
+    @IBOutlet weak var btnDelete: UIButton!
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -81,6 +82,9 @@ class ProductDetailVC: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         let circle = MKCircle(center: coordinate, radius: CLLocationDistance(300.0))
         mapView.addOverlay(circle)
+        
+        self.btnDelete.isHidden = kCurrentUser.UserId != self.productDetail.UserId
+        self.btnChat.isHidden = kCurrentUser.UserId == self.productDetail.UserId
     }
     
     // MKMapViewDelegate
@@ -116,6 +120,28 @@ class ProductDetailVC: UIViewController, MKMapViewDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func btnChatAction(_ sender: UIButton) {
+        let resultVC : ChatVC = Utilities.viewController(name: "ChatVC", storyboard: "MyProfile") as! ChatVC
+        resultVC.to_user_id = self.productDetail.UserId
+        resultVC.to_user_name = self.productDetail.UserName
+        resultVC.to_user_image = self.productDetail.UserProfile
+        self.navigationController?.pushViewController(resultVC, animated: true)
+    }
+    
+    @IBAction func btnDeleteAction(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "", message: "Are you sure you want to delete?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default) { action in
+        })
+        
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { action in
+            self.apiDeleteProduct()
+        })
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func btnSellerProfileAction(_ sender: UIButton) {
         
         let resultVC : ChatVC  = Utilities.viewController(name: "ChatVC", storyboard: "MyProfile") as! ChatVC
@@ -137,6 +163,7 @@ class ProductDetailVC: UIViewController, MKMapViewDelegate {
     @IBAction func btnLikeAction(_ sender: UIButton) {
         productLikeAPICall(productSave: productDetail.ProductSave == "0" ? 1 : 0)
     }
+    
     @IBAction func btnReportAction(_ sender: UIButton) {
         if sender.isSelected == true {
             // show alert that it is already reported
@@ -145,39 +172,38 @@ class ProductDetailVC: UIViewController, MKMapViewDelegate {
             reportAPICall()
         }
     }
+    
     @IBAction func btnShareAction(_ sender: UIButton) {
         shareProduct()
     }
     
-    // API Calling
-    // Report API:
+}
+
+extension ProductDetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    private func reportAPICall() {
-        let param : [String:Any] = ["UserId":Int(kCurrentUser.UserId) ?? 0,
-                                    "ProductId": Int(productDetail.Id) ?? 0,
-                                    "SaveValue": 0]
-
-        AlamofireModel.alamofireMethod(.post, apiAction: .ReportProduct, parameters: param, Header: [:], handler:{res in
-
-            if res.success == 1
-            {
-                self.btnReport.isSelected = true
-            }
-            else
-            {
-                AppInstance.showMessages(message: res.message)
-            }
-           
-
-        }, errorhandler: {error in
-
-            AppInstance.showMessages(message: error.localizedDescription)
-
-        })
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.productDetail.Images.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+         let cell: ProductDetailCLNCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductDetailCLNCell", for: indexPath) as! ProductDetailCLNCell
+        
+            cell.imgProductDetail.sd_setImage(with: URL(string: self.productDetail.Images[indexPath.row]), placeholderImage: UIImage(named: "ic_loginbg"))
+        
+  
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        imgProductPic.sd_setImage(with: URL(string: self.productDetail.Images[indexPath.row]), placeholderImage: UIImage(named: "ic_loginbg"))
+    }
+}
+
+extension ProductDetailVC {
+    
     // Product Like and unlike api
-    private func productLikeAPICall(productSave: Int) {
+    func productLikeAPICall(productSave: Int) {
         let param : [String:Any] = ["UserId":Int(kCurrentUser.UserId) ?? 0,
                                     "ProductId": Int(productDetail.Id) ?? 0,
                                     "SaveValue": productSave]
@@ -201,25 +227,51 @@ class ProductDetailVC: UIViewController, MKMapViewDelegate {
 
         })
     }
-}
-
-extension ProductDetailVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.productDetail.Images.count
+    func reportAPICall() {
+        let param : [String:Any] = ["UserId":Int(kCurrentUser.UserId) ?? 0,
+                                    "ProductId": Int(productDetail.Id) ?? 0,
+                                    "SaveValue": 0]
+
+        AlamofireModel.alamofireMethod(.post, apiAction: .ReportProduct, parameters: param, Header: [:], handler:{res in
+
+            if res.success == 1
+            {
+                self.btnReport.isSelected = true
+            }
+            else
+            {
+                AppInstance.showMessages(message: res.message)
+            }
+           
+
+        }, errorhandler: {error in
+
+            AppInstance.showMessages(message: error.localizedDescription)
+
+        })
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-         let cell: ProductDetailCLNCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductDetailCLNCell", for: indexPath) as! ProductDetailCLNCell
-        
-            cell.imgProductDetail.sd_setImage(with: URL(string: self.productDetail.Images[indexPath.row]), placeholderImage: UIImage(named: "ic_loginbg"))
-        
-  
-        return cell
-    }
+    func apiDeleteProduct() {
+        let param : [String:Any] = ["UserId": kCurrentUser.UserId,
+                                    "ProductId": self.productDetail.Id]
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        imgProductPic.sd_setImage(with: URL(string: self.productDetail.Images[indexPath.row]), placeholderImage: UIImage(named: "ic_loginbg"))
+        AlamofireModel.alamofireMethod(.post, apiAction: .DeleteProduct, parameters: param, Header: [:], handler:{res in
+
+            if res.success == 1
+            {
+                self.navigationController?.popViewController(animated: true)
+            }
+            else
+            {
+                AppInstance.showMessages(message: res.message)
+            }
+           
+
+        }, errorhandler: {error in
+
+            AppInstance.showMessages(message: error.localizedDescription)
+
+        })
     }
 }

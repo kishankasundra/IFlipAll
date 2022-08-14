@@ -9,6 +9,8 @@
 import UIKit
 import StoreKit
 import DropDown
+import GoogleMaps
+import GooglePlaces
 
 class PostAnItemTabVC: UIViewController {
     
@@ -27,16 +29,21 @@ class PostAnItemTabVC: UIViewController {
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnCancel: UIButton!
     
-    var isEdit = ""
+    var isForEdit: Bool = false
     var productCondition = ""
     let placeHolderText = "Write here"
     
     var myProductDetail = MyProductDetail()
+    var selectedCategory = CategoryDetail()
     
     var selectedImages = [UIImage]()
+    var imgURLs: [String] = [String]()
     var imagePicker = UIImagePickerController()
     var isImageChangedProfile : Bool = false
     var imageDict : [[String:String]] =  [[String:String]]()
+    var lat: Double = 0.0
+    var lng: Double = 0.0
+    var address: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +55,7 @@ class PostAnItemTabVC: UIViewController {
         txtDescription.delegate = self
         self.txtDescription.text = placeHolderText
         
-        if isEdit == "Edit"
+        if isForEdit
         {
             btnSave.setTitle("Save", for: .normal)
             btnCancel.setTitle("Delete Product", for: .normal)
@@ -63,7 +70,7 @@ class PostAnItemTabVC: UIViewController {
             btnBack.isHidden = true
         }
         
-        if isEdit == "Edit"
+        if isForEdit
         {
             self.txtProductTitle.text = self.myProductDetail.Name
             self.txtPrice.text = "Rs." + self.myProductDetail.Price
@@ -129,6 +136,10 @@ class PostAnItemTabVC: UIViewController {
 
     }
         
+    @IBAction func btnBackAction(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func btnRadioOnAction(_ sender: UIButton) {
         self.imgRadioOn.image = UIImage(named: "ic_radio_on")
         self.imgRadioOff.image = UIImage(named: "ic_radio_off")
@@ -152,14 +163,33 @@ class PostAnItemTabVC: UIViewController {
     }
     
     @IBAction func btnCategoryDropDownAction(_ sender: UIButton) {
+        
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        dropDown.width = sender.frame.width
+        dropDown.backgroundColor = .white
+        dropDown.shadowColor = appColors.black1
+        dropDown.dataSource = categorylist.detail.map({$0.CategoryName})
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            
+            self.txtCategory.text = item
+            self.selectedCategory = categorylist.detail[index]
+        }
+        dropDown.show()
+        
     }
     
-    @IBAction func btnBackAction(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+    @IBAction func btnSelectAdressAction(_ sender: UIButton) {
+        let autoCompletController = GMSAutocompleteViewController()
+        let filter = GMSAutocompleteFilter()
+        filter.type = .region
+        autoCompletController.autocompleteFilter = filter
+        autoCompletController.delegate = self
+        self.present(autoCompletController, animated: true, completion: nil)
     }
     
     @IBAction func btnCancelAction(_ sender: UIButton) {
-        if isEdit == "Edit"
+        if isForEdit
         {
             let resultVC : DeletePostPopUpVC = Utilities.viewController(name: "DeletePostPopUpVC", storyboard: "MyProfile") as! DeletePostPopUpVC
             self.present(resultVC, animated: false, completion: nil)
@@ -175,55 +205,7 @@ class PostAnItemTabVC: UIViewController {
         
         if validation()
         {
-
-            if self.selectedImages.count != imageDict.count
-            {
-                imageDict =  [[String:String]]()
-                
-                for img in selectedImages
-                {
-                    
-                    
-                    AWSS3Manager.shared.uploadImage(image: img, progress: {progress in
-                        
-                            print("Image Upload Progress", progress)
-                        }, completion: {(res, error) in
-
-                            if res != nil, let url = res as? String {
-                               
-                             let firstImage: [String:String] = ["url":url]
-                             self.imageDict.append(firstImage)
-
-                                if self.selectedImages.count == self.imageDict.count
-                                {
-                                       print(self.selectedImages.count)
-                                       print(self.imageDict.count)
-                                       print(self.imageDict.count)
-                                       
-                                    //self.APIChangeProfile()
-                                }
-
-                        
-                            } else {
-                                AppInstance.showMessages(message: error?.localizedDescription ?? "Error in image upload")
-                            }
-
-
-                        })
-                }
-            }
-            else
-            {
-                if self.selectedImages.count == self.imageDict.count
-                {
-                       print(self.selectedImages.count)
-                       print(self.imageDict.count)
-                       print(self.imageDict.count)
-                       
-                    //self.APIChangeProfile()
-                }
-            }
-            
+            self.UpladtImagesAndCallAPI()
         }
             
     }
@@ -241,6 +223,10 @@ class PostAnItemTabVC: UIViewController {
         {
             AppInstance.showMessages(message: appString.empty_product_title_msg)
         }
+        else if self.selectedCategory.CatId == ""
+        {
+            AppInstance.showMessages(message: appString.empty_product_category)
+        }
         else if self.txtPrice.text == ""
         {
             AppInstance.showMessages(message: appString.empty_price_msg)
@@ -253,6 +239,9 @@ class PostAnItemTabVC: UIViewController {
         {
             AppInstance.showMessages(message: appString.empty_description_msg)
         }
+        else if self.address == "" {
+            AppInstance.showMessages(message: appString.empty_address_msg)
+        }
         else
         {
             return true
@@ -260,6 +249,31 @@ class PostAnItemTabVC: UIViewController {
         
         return false
         
+    }
+    
+    func UpladtImagesAndCallAPI() {
+        
+        
+        if self.selectedImages.count > 0 {
+            
+            AWSS3Manager.shared.uploadImage(image: self.selectedImages[0], progress: {progress in
+                print("Image Upload Progress", progress)
+            }, completion: {(res, error) in
+            
+                if res != nil, let url = res as? String {
+                    self.selectedImages.remove(at: 0)
+                    self.imgURLs.append(url)
+                    self.UpladtImagesAndCallAPI()
+                } else {
+                    AppInstance.showMessages(message: error?.localizedDescription ?? "Error in image upload")
+                }
+            
+            
+            })
+            
+        } else {
+            self.APIAddProduct()
+        }
     }
     
 }
@@ -278,6 +292,30 @@ extension PostAnItemTabVC: UITextViewDelegate {
     }
     
     
+}
+
+extension PostAnItemTabVC: GMSAutocompleteViewControllerDelegate
+{
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        
+        self.lat = place.coordinate.latitude
+        self.lng = place.coordinate.longitude
+        self.address = place.formattedAddress ?? ""
+        self.txtAddress.text = self.address
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        
+        print("ERROR AUTO COMPLETE \(error)")
+    }
+    
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
 }
 
 extension PostAnItemTabVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -379,5 +417,51 @@ extension PostAnItemTabVC: UICollectionViewDelegate, UICollectionViewDataSource 
            }
        }
     
+    
+}
+
+extension PostAnItemTabVC {
+    
+    func APIAddProduct() {
+        
+        var imgDicts:  [[String:String]] = [[String:String]]()
+        
+        for obj in self.imgURLs {
+            let temp = ["url": obj]
+            imgDicts.append(temp)
+        }
+        
+  
+        let params: [String: Any] = ["CategoryId":self.selectedCategory.CatId,
+                                     "UserId": kCurrentUser.UserId,
+                                     "Name": self.txtProductTitle.text!,
+                                     "Price": self.txtPrice.text!,
+                                     "Description":self.txtDescription.text!,
+                                     "Condition": self.productCondition,
+                                     "Images": JSON(imgDicts),
+                                     "Longitude":self.lng,
+                                     "Langitude":self.lat,
+                                     "Address": self.address,
+                                     "Negotiation": "false",
+                                     "product_type": 2,//self.isProdRequest ? 1 : 2,
+                                     "ProductId": self.myProductDetail.Id,
+                                     "SoldStatus": "1"
+        ]
+        
+        print(params)
+        
+        AlamofireModel.alamofireMethod(.post, apiAction: self.isForEdit ? .EditProduct : .AddProduct, parameters: params, Header: [:], handler: {res in
+            
+            if res.success == 1 {
+                AppInstance?.goToHomeVC()
+            }
+            
+            AppInstance.showMessages(message: res.message)
+            
+             
+        }, errorhandler: {error in
+            AppInstance.showMessages(message: error.localizedDescription)
+        })
+    }
     
 }

@@ -23,4 +23,5 @@ target 'IFlipAll' do
     pod 'AWSS3'
     pod 'GooglePlaces'
     pod 'GoogleMaps'
+    pod 'DropDown'
 end
