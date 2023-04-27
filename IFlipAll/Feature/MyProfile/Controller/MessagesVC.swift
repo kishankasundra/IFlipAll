@@ -63,7 +63,7 @@ extension MessagesVC : UITableViewDelegate,UITableViewDataSource
         cell.lblUnreadCount.isHidden = (count < 1)
         cell.lblUnreadCount.text = count.description
         
-        cell.imgProfile.sd_setImage(with: URL(string:temp.user_image), placeholderImage:  UIImage(named: "ic_loginbg"))
+        cell.imgProfile.sd_setImage(with: URL(string:temp.user_image), placeholderImage:  UIImage(named: "ic_placeHolder"))
         cell.lblTime.text = Utilities.customeDateTimeFormatter(doubleFromStr(temp.last_chat_time),isChat: true)
         
         return cell

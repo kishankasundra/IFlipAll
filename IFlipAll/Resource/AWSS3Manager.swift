@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 import AWSS3 //1
 
-var accessKey = "AKIAJ42MMYRKQZRXFDFQ"
-var secretAccess = "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"
-let bucketName = "iflipbucket" //5
+var accessKey = "AKIA2YESKZJWEOHVVUQE"//"AKIAJ42MMYRKQZRXFDFQ"
+var secretAccess = "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"//"pY5/SdKGazlGOC6Gf7oxY1BoD570GU8ZjrILaT0q"
+let bucketName = "iflipall"//"iflipbucket" //5
 var regionType = AWSRegionType.USEast2 //us-east-2
 
 typealias progressBlock = (_ progress: Double) -> Void //2

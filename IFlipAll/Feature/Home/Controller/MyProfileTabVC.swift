@@ -10,21 +10,35 @@ import UIKit
 
 class MyProfileTabVC: UIViewController {
     
-    let options : [String] = ["Sell Products","Buy Products","Edit Profile","Change Password","Messages","Help Center","Logout"]
-    
-    let optionImgs : [String] = ["ic_sell_product_new","ic_buy_products_new","ic_edit_new","ic_changepassword_new","ic_messages_new","ic_about_us_new","logout"]
     @IBOutlet weak var tblProfile: UITableView!
-
+    @IBOutlet weak var lblProfile: UILabel!
+    @IBOutlet weak var imgProfile: UIImageView!
+    
+    let options : [String] = ["Sell Products","Buy Products","Edit Profile","Change Password","Messages","Help Center","Logout"]
+    let optionImgs : [String] = ["ic_sell_product_new","ic_buy_products_new","ic_edit_new","ic_changepassword_new","ic_messages_new","ic_about_us_new","logout"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tblProfile.tableFooterView = UIView()
+        self.setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.stupOnViewAppear()
+    }
     @IBAction func btnBackAction(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    func setupUI() {
+        self.tblProfile.tableFooterView = UIView()
+    }
+    
+    func stupOnViewAppear() {
+        self.lblProfile.text = kCurrentUser.FullName
+        self.imgProfile.sd_setImage(with: URL(string: kCurrentUser.ProfileImage), placeholderImage:UIImage(named: "ic_placeHolder"))
+    }
+
 }
 
 extension MyProfileTabVC: UITableViewDelegate, UITableViewDataSource {
@@ -81,11 +95,11 @@ extension MyProfileTabVC: UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(resultVC, animated: true)
         case 6:
             let resultVC : TermsAndConditionsVC = Utilities.viewController(name: "TermsAndConditionsVC", storyboard: "MyProfile") as! TermsAndConditionsVC
-            resultVC.titleText = "Terms & Conditions"
+            resultVC.titleText = "Privacy Policy"
             self.navigationController?.pushViewController(resultVC, animated: true)
         case 7:
             let resultVC : TermsAndConditionsVC = Utilities.viewController(name: "TermsAndConditionsVC", storyboard: "MyProfile") as! TermsAndConditionsVC
-            resultVC.titleText = "Privacy Policy"
+            resultVC.titleText = "Terms & Conditions"
             self.navigationController?.pushViewController(resultVC, animated: true)
         case 8:
             let resultVC : ContactUsVC = Utilities.viewController(name: "ContactUsVC", storyboard: "MyProfile") as! ContactUsVC

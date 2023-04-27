@@ -56,7 +56,7 @@ class ProductDetailVC: UIViewController, MKMapViewDelegate {
         self.clnViewProductDetailImg.reloadData()
         
         if self.productDetail.Images.count > 0, self.productDetail.Images[0] != "" {
-            self.imgProductPic.sd_setImage(with: URL(string: self.productDetail.Images[0]), placeholderImage: UIImage(named: "ic_loginbg"))
+            self.imgProductPic.sd_setImage(with: URL(string: self.productDetail.Images[0]), placeholderImage: UIImage(named: "ic_placeHolder"))
         }
         
         let temp = self.productDetail
@@ -65,7 +65,7 @@ class ProductDetailVC: UIViewController, MKMapViewDelegate {
         priceView.isHidden = temp.ProductType == "2"
         lblUserSince.text = "Member since \(temp.UserSince)"
         lblProductName.text = temp.Name
-        imgUserProfile.sd_setImage(with: URL(string: temp.UserProfile), placeholderImage: UIImage(named: "ic_loginbg"))
+        imgUserProfile.sd_setImage(with: URL(string: temp.UserProfile), placeholderImage: UIImage(named: "ic_placeHolder"))
         lblUserName.text = temp.UserName
         lblDescription.text = temp.Description
         // Product Type => 1:(Sell), 2:(Free), 3:(Request)
@@ -189,14 +189,14 @@ extension ProductDetailVC: UICollectionViewDelegate, UICollectionViewDataSource 
         
          let cell: ProductDetailCLNCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductDetailCLNCell", for: indexPath) as! ProductDetailCLNCell
         
-            cell.imgProductDetail.sd_setImage(with: URL(string: self.productDetail.Images[indexPath.row]), placeholderImage: UIImage(named: "ic_loginbg"))
+            cell.imgProductDetail.sd_setImage(with: URL(string: self.productDetail.Images[indexPath.row]), placeholderImage: UIImage(named: "ic_placeHolder"))
         
   
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        imgProductPic.sd_setImage(with: URL(string: self.productDetail.Images[indexPath.row]), placeholderImage: UIImage(named: "ic_loginbg"))
+        imgProductPic.sd_setImage(with: URL(string: self.productDetail.Images[indexPath.row]), placeholderImage: UIImage(named: "ic_placeHolder"))
     }
 }
 

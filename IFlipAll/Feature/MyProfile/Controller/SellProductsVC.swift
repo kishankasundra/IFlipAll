@@ -86,7 +86,7 @@ extension SellProductsVC: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         if temp.Images.count > 0 && temp.Images[0] != ""
         {
-            cell.imgMyProduct.sd_setImage(with: URL(string: temp.Images[0]), placeholderImage:UIImage(named: "ic_loginbg"))
+            cell.imgMyProduct.sd_setImage(with: URL(string: temp.Images[0]), placeholderImage:UIImage(named: "ic_placeHolder"))
         }
         
         cell.btnSold.isHidden = temp.isButtonHide ?? false

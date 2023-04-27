@@ -22,38 +22,11 @@ class EditProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nameAttributedPlaceholder = NSAttributedString(string: "Name",
-                                                    attributes: [NSAttributedString.Key.foregroundColor: appColors.purpleColor])
-        
-        let emailAttributedPlaceholder = NSAttributedString(string: "Email",
-                                                     attributes: [NSAttributedString.Key.foregroundColor: appColors.purpleColor])
-
-        let phoneAttributedPlaceholder = NSAttributedString(string: "Phone",
-                                                     attributes: [NSAttributedString.Key.foregroundColor: appColors.purpleColor])
-        
-        txtFullName.attributedPlaceholder = nameAttributedPlaceholder
-        txtEmail.attributedPlaceholder = emailAttributedPlaceholder
-        txtPhone.attributedPlaceholder = phoneAttributedPlaceholder
+        self.setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.txtPhone.isEnabled = false
-        self.txtEmail.isEnabled = false
-        
-        self.updateUserData()
-        
-        if kCurrentUser.PhoneNumber == "" || kCurrentUser.PhoneNumber == "0"
-        {
-            self.txtPhone.isEnabled = true
-        }
-            
-        if kCurrentUser.Email == ""
-        {
-            self.txtEmail.isEnabled = true
-        }
-        
     }
     
     @IBAction func btnBackAction(_ sender: UIButton) {
@@ -96,6 +69,35 @@ class EditProfileVC: UIViewController {
     
     @IBAction func btnChangeProfileAction(_ sender: UIButton) {
         self.pickPhoto()
+    }
+    
+    func setupUI() {
+        let nameAttributedPlaceholder = NSAttributedString(string: "Name",
+                                                    attributes: [NSAttributedString.Key.foregroundColor: appColors.purpleColor])
+        
+        let emailAttributedPlaceholder = NSAttributedString(string: "Email",
+                                                     attributes: [NSAttributedString.Key.foregroundColor: appColors.purpleColor])
+
+        let phoneAttributedPlaceholder = NSAttributedString(string: "Phone",
+                                                     attributes: [NSAttributedString.Key.foregroundColor: appColors.purpleColor])
+        
+        txtFullName.attributedPlaceholder = nameAttributedPlaceholder
+        txtEmail.attributedPlaceholder = emailAttributedPlaceholder
+        txtPhone.attributedPlaceholder = phoneAttributedPlaceholder
+        
+        self.txtPhone.isEnabled = false
+        self.txtEmail.isEnabled = false
+        self.updateUserData()
+        
+        if kCurrentUser.PhoneNumber == "" || kCurrentUser.PhoneNumber == "0"
+        {
+            self.txtPhone.isEnabled = true
+        }
+            
+        if kCurrentUser.Email == ""
+        {
+            self.txtEmail.isEnabled = true
+        }
     }
     
     func validation() -> Bool
@@ -186,7 +188,7 @@ extension EditProfileVC: UIImagePickerControllerDelegate, UINavigationController
         }
         else
         {
-            AppInstance.showMessages(message: "You don't have camera")
+            AppInstance.showMessages(message: "Your device doesn't support camera")
         }
     }
     
